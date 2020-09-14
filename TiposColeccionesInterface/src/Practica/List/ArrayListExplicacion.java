@@ -9,10 +9,50 @@ public class ArrayListExplicacion {
 
     /*
     
-    Nos ayuda a realizar un codigo mas limpio  y es una forma almacenar y manipular grandes volumenes de datos tal y como 
-    lo hariamos en una matriz o arreglo  en cual implementa en proceso de  grandes cantidades de informacion en cual
-    no tiene la necesidad de especificar el tamaño
+    Principalmete esta <Interfaz> 
     
+        * Acceso aleatorio
+        * Estan ordenadas (Colection.sort()).
+        * Añadir / eliminar facilmente 
+        * ListIterador se modifica en cualquier direccion 
+        * Sintaxis similar a arrays
+
+    
+                __  ______  __
+               |__||_Dato_||__| ↺
+                __  ______  __
+            ↻  |__||_Dato_||__| 
+                __  ______  __
+               |__||_Dato_||__| ↺
+                __  ______  __
+            ↻  |__||_Dato_||__| 
+                __  ______  __
+               |__||_Dato_||__| ↺
+                __  ______  __
+            ↻  |__||_Dato_||__| 
+    
+    
+    El proceso  que realiza <ArrayList> en el consumo de recursos no es tan eficiente en cual al realizar 
+    una eliminacion de un elemento no es tan eficiente
+    
+                
+                __  ______  __
+               |__||_Dato_||__| ↺
+                __  ______  __
+            ↻  |__||_Dato_||__| 
+               
+                                ↺
+                __  ______  __
+            ↻  |__||_Dato_||__| 
+                __  ______  __
+               |__||_Dato_||__| ↺
+                __  ______  __
+            ↻  |__||_Dato_||__|
+    
+    
+    Se realiza la eliminacion de un elemento donde se  reliza un consumo mayor. Tiene que mover todos 
+    los elementos que se encuentran en la parte inferior colocandolos en la posicion del elemento eliminado
+    este proceso que reliza consume mucho recursos donde hay otras <Interface> que lo relizarian mas eficiente.
     
     
     
@@ -373,7 +413,7 @@ public class ArrayListExplicacion {
         nombre.imprimirArrayFor();
         nombre.imprimirArrayIterator();
         nombre.imprimir();
-        
+
     }
 
 }

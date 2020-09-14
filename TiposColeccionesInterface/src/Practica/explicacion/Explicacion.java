@@ -1,5 +1,9 @@
 package Practica.explicacion;
 
+import java.util.ListIterator;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Explicacion {
 
     /*
@@ -132,4 +136,37 @@ public class Explicacion {
             
     
      */
+    public static void main(String[] args) {
+
+        List<String> pais = new LinkedList();
+
+        pais.add("Colombia");
+        pais.add("España");
+        pais.add("Mexico");
+
+        List<String> capital = new LinkedList();
+
+        capital.add("Bogota");
+        capital.add("Msdrid");
+        capital.add("Ciudad de Mexico");
+
+        ListIterator<String> paises = pais.listIterator();
+        ListIterator<String> capitales = capital.listIterator();
+
+        while (capitales.hasNext()) {
+
+            if (paises.hasNext()) {
+
+                paises.next();
+
+            }
+
+            paises.add(capitales.next());
+
+        }
+
+        System.out.println(pais + "=");
+
+    }
+
 }
