@@ -165,7 +165,7 @@ public class Explicacion {
 
         }
 
-        System.out.println(pais + "=");
+        System.out.println(pais );
 
     }
 
