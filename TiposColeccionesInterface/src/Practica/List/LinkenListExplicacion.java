@@ -98,24 +98,91 @@ public class LinkenListExplicacion {
     
     
      */
-    List<String> nombre = new LinkedList();
+    List<String> actores;
+    Set<Integer> numeros;
 
-    public void ingresarInformacion() {
+    public LinkenListExplicacion() {
 
-        nombre.add("Jefersson");
-        nombre.add("hola");
-        nombre.add("Jefersson");
-        nombre.add("Jefersson");
-        nombre.add("Jefersson");
-        nombre.add("Jefersson");
+        actores = new LinkedList();
+        numeros = new HashSet();
 
     }
 
-    public void visualizarElementos() {
+    public void addActor(String actor) {
 
-        ListIterator<String> nombres = nombre.listIterator();
+        actores.add(actor);
 
-        System.out.println(nombres.next());
+    }
+
+    public void addNumeros(int numero) {
+
+        numeros.add(numero);
+
+    }
+
+    public void visualizarElementosNombres() {
+
+        ListIterator<String> actoresIterator = actores.listIterator();
+
+        while (actoresIterator.hasNext()) {
+
+            System.out.println(actoresIterator.next());
+
+        }
+
+    }
+
+    public void visualizarElementosNumeros() {
+
+        Iterator<Integer> numerosIterator = numeros.iterator();
+
+        while (numerosIterator.hasNext()) {
+
+            System.out.println(numerosIterator.next());
+  
+        }
+
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 47 * hash + Objects.hashCode(this.numeros);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final LinkenListExplicacion other = (LinkenListExplicacion) obj;
+        if (!Objects.equals(this.numeros, other.numeros)) {
+            return false;
+        }
+        return true;
+    }
+
+    
+    
+    
+    public void validar(String nombre) {
+
+        if (actores.contains(nombre)) {
+
+            System.out.println("[" + "Encontrado" + "]");
+
+        } else {
+
+            System.out.println("No encontrado");
+
+        }
 
     }
 
@@ -123,8 +190,19 @@ public class LinkenListExplicacion {
 
         LinkenListExplicacion prueba = new LinkenListExplicacion();
 
-        prueba.ingresarInformacion();
-        prueba.visualizarElementos();
+        prueba.addNumeros(1212);
+        prueba.addNumeros(1212);
+        prueba.addNumeros(1212);
+        prueba.addNumeros(1212);
+        prueba.addNumeros(1212);
+
+        prueba.visualizarElementosNumeros();
+
+        prueba.addActor("Jefersson");
+        prueba.addActor("Rodriguez");
+        prueba.addActor("Camacho");
+
+        prueba.visualizarElementosNombres();
 
     }
 
