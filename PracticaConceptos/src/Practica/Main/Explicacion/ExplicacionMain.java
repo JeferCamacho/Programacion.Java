@@ -19,33 +19,26 @@ public class ExplicacionMain {
     
    //Clase inalterable a sus caractiristicas 
     
-         * Siempre debe incluir los calificadores : < public - statis>
-         * Nunca puede  devolver un valor como resultado por ende simpre debe indicar el valor 
-           void como retorno 
-         * Su parametro de entrada siempre sera un < Array > <String [] > en cual es tomado 
-           de la linea de comandos o una fuente alternativa
-         *Aunque no es un requerimiento definir el método main dentro de toda Clase Java, dicho 
-          método representa el único mecanismo automático para realizar tareas al invocarse una 
-          Clase, esto es, al momento de ejecutarse determinada Clase siempre será ejecutado todo 
-          el contenido dentro de dicho método.
-    
-    
     
     
     
     < public > < static > < void  > < main > ( < String[] >  < args >) {
         
+    // Descripcion de las lineas
     
-     ( < String[] >  < args >) = Principalmente cuando se realiza progracion estructural < String []> 
-      es un < Array > en cual recibe los parametros en cual esten utilizandose en la  clase.
+     ( < String[]><args>)= Principalmente cuando se realiza progracion estructural < String []> 
+                           es un < Array > en cual recibe los parametros en cual esten utilizandose 
+                           en la  clase.
+    
+     < void  > = Indica que esto no devuelve ningun valor asi que main solo se limita a ejecutar lo que 
+                 tenga en su interior y punto.
     
     
-    int numeros;
-    String nombres;
+    
+      
     
     
     
-    }
 
 
 
