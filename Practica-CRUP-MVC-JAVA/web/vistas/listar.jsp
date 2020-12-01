@@ -1,0 +1,68 @@
+
+
+<%-- 
+    Document   : listar
+    Created on : 24/11/2020, 3:26:58 p. m.
+    Author     : Fenix
+--%>
+
+<%@page import="java.util.Iterator"%>
+<%@page import="Modelo.Persona"%>
+<%@page import="java.util.List"%>
+<%@page import="ModeloDAO.PersonaDAO"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <h1>Persona</h1>
+
+        <a href="Controlador?accion=add" >Agregar Nuevo</a>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>DNI</th>
+                    <th>NOMBRES</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+
+            <%
+
+                PersonaDAO dao = new PersonaDAO();
+                List<Persona> list = dao.listar();
+                Iterator<Persona> iter = list.iterator();
+
+                Persona per = null;
+                while (iter.hasNext()) {
+
+                    per = iter.next();
+
+            %>
+
+            <tbody>
+
+
+                <tr>
+                    <td><%= per.getId()%></td>
+                    <td><%= per.getDni()%></td>
+                    <td><%= per.getNom()%></td>
+                    <td>
+
+                        <a href="Controlador?accion=editar&id=<%= per.getId()%>">Edit</a>
+                        <a href="Controlador?accion=eliminar&id=<%= per.getId()%>">Eliminar</a>
+
+                    </td>
+                </tr>
+                <% }%>
+            </tbody>
+        </table>
+
+
+    </body>
+</html>
