@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class ProductoDoa {
+public class ProductoDao {
 
     Connection con;
 
@@ -16,7 +16,7 @@ public class ProductoDoa {
 
     public boolean add(Producto producto) {
 
-        String sql = "INSERT INTO  	producto (codigo,nombre,cantidad) VALUED (?,?,?)";
+        String sql = "INSERT INTO producto (codigo, nombre , cantidad) VALUES (? , ? , ? )";
 
         try {
 
@@ -24,12 +24,11 @@ public class ProductoDoa {
 
             ps = con.prepareStatement(sql);
 
-            ps.setString(1, producto.getCodigo());
-            ps.setString(2, producto.getNombre());
+            ps.setString(1, producto.getNombre());
+            ps.setString(2, producto.getCodigo());
             ps.setInt(3, producto.getCantidad());
 
             ps.executeUpdate();
-
         } catch (Exception e) {
         }
 

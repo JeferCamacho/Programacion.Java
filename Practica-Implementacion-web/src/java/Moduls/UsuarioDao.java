@@ -1,4 +1,4 @@
-package Moduls;
+  package Moduls;
 
 import Config.Conexion;
 import java.sql.Connection;
@@ -24,7 +24,14 @@ public class UsuarioDao {
     
     //FUNCIONAMIENTO
     
-        *<PreparedStatement> : Sirve para preparar sentencias <SQL> Nos sirve para <Buscar-Insertar-Buscar> 
+        *<PreparedStatement> : Sirve para preparar sentencias <SQL> Nos sirve para <Buscar-Insertar-Buscar> principalmente tiene un paremetro de entrada cuyo valor es especificado en la sentencia  como un interrogante <?> por cada interrogante es un dato de entrada en cual si en totalidad la cantidad de datos son 4 lo que se realiza es poder un interrogante por cada dato se implementaria de la siguiente manera VALUES <?,?,?,?> Antes de ejecutarse la sentencia se debe sumistrar un valor para cada interrogante mediante los metodos apriados <SET  
+
+    private int id;
+    private String nombre;
+    private String password;
+    private String correo;
+	
+    
     
     
      */

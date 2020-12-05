@@ -1,5 +1,9 @@
 package Controller;
 
+import Moduls.Documento;
+import Moduls.DocumentoDao;
+import Moduls.Producto;
+import Moduls.ProductoDao;
 import Moduls.Usuario;
 import Moduls.UsuarioDao;
 import java.io.IOException;
@@ -15,6 +19,10 @@ public class controlador extends HttpServlet {
 
     Usuario usuario = new Usuario();
     UsuarioDao usuarioDao = new UsuarioDao();
+    Producto producto = new Producto();
+    ProductoDao productoDao = new ProductoDao();
+    Documento documento = new Documento();
+    DocumentoDao documentoDoa = new DocumentoDao();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -40,6 +48,38 @@ public class controlador extends HttpServlet {
 
             usuarioDao.add(usuario);
             request.getRequestDispatcher("WIEW/add.jsp").forward(request, response);
+        } else if (action.equalsIgnoreCase("crearProducto")) {
+
+            request.getRequestDispatcher("WIEW/producto.jsp").forward(request, response);
+
+        } else if (action.equalsIgnoreCase("agregarProducto")) {
+
+            String nombre = request.getParameter("nombre");
+            String codigo = request.getParameter("codigo");
+            int cantidad = Integer.parseInt(request.getParameter("cantidad"));
+
+            producto.setNombre(nombre);
+            producto.setCodigo(codigo);
+            producto.setCantidad(cantidad);
+
+            productoDao.add(producto);
+            request.getRequestDispatcher("WIEW/producto.jsp").forward(request, response);
+
+        } else if (action.equalsIgnoreCase("crearDocumento")) {
+
+            request.getRequestDispatcher("WIEW/documento.jsp").forward(request, response);
+
+        } else if (action.equalsIgnoreCase("agregarDocumento")) {
+            int codigo = Integer.parseInt(request.getParameter("codigo"));
+            String nombreDocumento = request.getParameter("nombreDocumento");
+
+            documento.setCodigo(codigo);
+            documento.setNombreDocumento(nombreDocumento);
+
+            documentoDoa.add(documento);
+
+            request.getRequestDispatcher("WIEW/documento.jsp");
+
         }
 
     }
